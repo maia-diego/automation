@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Results</title>
+    <link rel="stylesheet" type="text/css" href="/static/table.css">
+</head>
+<body>
+  <legend class="legend">Test Results</legend>
+  <div class="container">
+      <table class="table">
+          <tr class="table-header">
+              <th class="header__item">TestCase</th>
+              <th class="header__item">Status</th>
+          </tr>
+          {% for key, values  in results.items() %}
+              <tr class="table-row">
+                  <td class="table-data">{{ key }}</td>
+                  <td class="table-data">{{ values }}</td>
+              </tr>
+          {% endfor %}
+    </table>
+  </div>
+</body>
+</html>

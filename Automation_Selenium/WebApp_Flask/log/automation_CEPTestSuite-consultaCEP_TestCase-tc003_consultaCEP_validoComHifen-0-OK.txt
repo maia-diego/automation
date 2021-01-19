@@ -1,0 +1,62 @@
+Status: OK
+Time Taken: 304
+Size: 385
+Timestamp: Fri Jan 08 10:07:32 BRST 2021
+TestStep: tc003_consultaCEP_validoComHifen
+
+----------------- Messages ------------------------------
+
+----------------- Properties ------------------------------
+Endpoint: https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente
+Encoding: UTF-8
+
+---------------- Request ---------------------------
+Request Headers: SOAPAction : ""
+Connection : Keep-Alive
+User-Agent : Apache-HttpClient/4.5.5 (Java/12.0.1)
+Host : apps.correios.com.br
+Accept-Encoding : gzip,deflate
+Content-Length : 333
+Content-Type : text/xml;charset=UTF-8
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cli="http://cliente.bean.master.sigep.bsb.correios.com.br/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cli:consultaCEP>
+         <!--Optional:-->
+         <cep>13482-060</cep>
+      </cli:consultaCEP>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+---------------- Response --------------------------
+Response Headers: Keep-Alive : timeout=5, max=98
+Server : Apache/2.4.38 (Debian)
+X-OPNET-Transaction-Trace : a2_f52a24cd-2ec0-4dde-a46c-6a7630c17126
+Content-Encoding : gzip
+Connection : Keep-Alive
+Vary : Accept-Encoding,User-Agent
+Set-Cookie : _op_aixPageId=a2_f52a24cd-2ec0-4dde-a46c-6a7630c17126; Path=/
+Set-Cookie : app-%3FINTERNO%3Fpool_proxy_app_sigep_443=PNCCAIAK; Expires=Fri, 08-Jan-2021 12:26:42 GMT; Path=/
+Set-Cookie : sto-id-%3FEXTERNO_2%3Fpool_Proxy_reverso_Apps_443=MOABKIMA; Expires=Fri, 08-Jan-2021 12:26:42 GMT; Path=/
+#status# : HTTP/1.1 200 OK
+Content-Length : 254
+Date : Fri, 08 Jan 2021 12:06:42 GMT
+Content-Type : text/xml;charset=UTF-8
+
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:consultaCEPResponse xmlns:ns2="http://cliente.bean.master.sigep.bsb.correios.com.br/">
+         <return>
+            <bairro>Jardim Ouro Verde</bairro>
+            <cep>13482060</cep>
+            <cidade>Limeira</cidade>
+            <complemento2/>
+            <end>Rua Guido Orsi</end>
+            <uf>SP</uf>
+         </return>
+      </ns2:consultaCEPResponse>
+   </soap:Body>
+</soap:Envelope>

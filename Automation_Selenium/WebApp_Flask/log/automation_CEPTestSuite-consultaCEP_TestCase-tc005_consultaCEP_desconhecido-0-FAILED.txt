@@ -1,0 +1,61 @@
+Status: FAILED
+Time Taken: 290
+Size: 382
+Timestamp: Fri Jan 08 10:07:32 BRST 2021
+TestStep: tc005_consultaCEP_desconhecido
+
+----------------- Messages ------------------------------
+[Contains] Missing token [CEP NAO ENCONTRADO] in Response
+
+----------------- Properties ------------------------------
+Endpoint: https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente
+Encoding: UTF-8
+
+---------------- Request ---------------------------
+Request Headers: SOAPAction : ""
+Connection : Keep-Alive
+User-Agent : Apache-HttpClient/4.5.5 (Java/12.0.1)
+Host : apps.correios.com.br
+Accept-Encoding : gzip,deflate
+Content-Length : 332
+Content-Type : text/xml;charset=UTF-8
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cli="http://cliente.bean.master.sigep.bsb.correios.com.br/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cli:consultaCEP>
+         <!--Optional:-->
+         <cep>69036595</cep>
+      </cli:consultaCEP>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+---------------- Response --------------------------
+Response Headers: Keep-Alive : timeout=5, max=99
+Server : Apache/2.4.38 (Debian)
+Content-Encoding : gzip
+Connection : Keep-Alive
+Vary : Accept-Encoding,User-Agent
+Set-Cookie : app-%3FINTERNO%3Fpool_proxy_app_sigep_443=PNCCAIAK; Expires=Fri, 08-Jan-2021 12:26:42 GMT; Path=/
+Set-Cookie : sto-id-%3FEXTERNO_2%3Fpool_Proxy_reverso_Apps_443=BIABKIMA; Expires=Fri, 08-Jan-2021 12:26:42 GMT; Path=/
+#status# : HTTP/1.1 200 OK
+Content-Length : 250
+Date : Fri, 08 Jan 2021 12:06:43 GMT
+Content-Type : text/xml;charset=UTF-8
+
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:consultaCEPResponse xmlns:ns2="http://cliente.bean.master.sigep.bsb.correios.com.br/">
+         <return>
+            <bairro>Santo Agostinho</bairro>
+            <cep>69036595</cep>
+            <cidade>Manaus</cidade>
+            <complemento2/>
+            <end>Avenida Brasil</end>
+            <uf>AM</uf>
+         </return>
+      </ns2:consultaCEPResponse>
+   </soap:Body>
+</soap:Envelope>

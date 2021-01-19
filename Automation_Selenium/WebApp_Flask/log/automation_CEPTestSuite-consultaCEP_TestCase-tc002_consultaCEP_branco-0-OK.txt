@@ -1,0 +1,58 @@
+Status: OK
+Time Taken: 418
+Size: 359
+Timestamp: Fri Jan 08 10:07:31 BRST 2021
+TestStep: tc002_consultaCEP_branco
+
+----------------- Messages ------------------------------
+
+----------------- Properties ------------------------------
+Endpoint: https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente
+Encoding: UTF-8
+
+---------------- Request ---------------------------
+Request Headers: SOAPAction : ""
+Connection : Keep-Alive
+User-Agent : Apache-HttpClient/4.5.5 (Java/12.0.1)
+Host : apps.correios.com.br
+Accept-Encoding : gzip,deflate
+Content-Length : 324
+Content-Type : text/xml;charset=UTF-8
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cli="http://cliente.bean.master.sigep.bsb.correios.com.br/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cli:consultaCEP>
+         <!--Optional:-->
+         <cep/>
+      </cli:consultaCEP>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+---------------- Response --------------------------
+Response Headers: Server : Apache/2.4.38 (Debian)
+X-OPNET-Transaction-Trace : a2_96291977-937b-4134-8d81-88675bc30ee9
+Content-Encoding : gzip
+Connection : close
+Vary : Accept-Encoding,User-Agent
+Set-Cookie : _op_aixPageId=a2_96291977-937b-4134-8d81-88675bc30ee9; Path=/
+Set-Cookie : app-%3FINTERNO%3Fpool_proxy_app_sigep_443=PNCCAIAK; Expires=Fri, 08-Jan-2021 12:26:41 GMT; Path=/
+Set-Cookie : sto-id-%3FEXTERNO_2%3Fpool_Proxy_reverso_Apps_443=MOABKIMA; Expires=Fri, 08-Jan-2021 12:26:41 GMT; Path=/
+#status# : HTTP/1.1 500 Internal Server Error
+Content-Length : 221
+Date : Fri, 08 Jan 2021 12:06:42 GMT
+Content-Type : text/xml;charset=UTF-8
+
+
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <soap:Fault>
+         <faultcode>soap:Server</faultcode>
+         <faultstring>CEP INVÁLIDO</faultstring>
+         <detail>
+            <ns2:SigepClienteException xmlns:ns2="http://cliente.bean.master.sigep.bsb.correios.com.br/">CEP INVÁLIDO</ns2:SigepClienteException>
+         </detail>
+      </soap:Fault>
+   </soap:Body>
+</soap:Envelope>
